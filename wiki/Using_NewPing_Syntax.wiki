@@ -1,0 +1,15 @@
+#summary Using NewPing (Syntax)
+#labels Featured
+
+= Using NewPing (Syntax) =
+
+  * *`NewPing sonar(trigger_pin, echo_pin, max_cm_distance);`* - Initialize an ultrasonic device, trigger pin, echo pin, and maximum distance you wish to "see".
+
+  * *`NewPing sonar(trigger_pin, echo_pin);`* - Initialize an ultrasonic device, trigger pin, echo pin.
+
+
+  * *`sonar.ping();`* - Send a ping and get the echo time (in microseconds) as a result. 
+  * *`sonar.ping_in();`* - Send a ping and get the distance in whole inches.
+  * *`sonar.ping_cm();`* - Send a ping and get the distance in whole centimeters.
+  * *`sonar.convert_in(echoTime);`* - Convert echoTime from microseconds to inches.
+  * *`sonar.convert_cm(echoTime);`* - Convert echoTime from microseconds to centimeters.

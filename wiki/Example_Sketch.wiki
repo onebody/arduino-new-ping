@@ -1,0 +1,43 @@
+#summary Sample NewPing Sketch
+#labels Featured
+
+= Sample NewPing Sketch =
+
+{{{
+// ---------------------------------------------------------------------------
+// Getting a reliable ping every 50 milliseconds isn't possible with other ping or ultrasonic libraries.
+// These kinds of speeds work perfectly with the NewPing library. Even at the maximum sensor distance of
+// 500cm, distance measurements can be done 20 times a second!  If you set the maximum distance to 200cm
+// as in this example sketch, even faster pings can be achieved.  I suggest waiting at least 35
+// milliseconds between pings to avoid previous ping echo issues, that translates to a maximum ping rate
+// of around 28 times per second.  Much better than the sometimes 1 ping a second with other libraries.
+// ---------------------------------------------------------------------------
+#include <NewPing.h>
+
+#define TRIGGER_PIN  12  // Arduino pin tied to trigger pin on HC-SR04.
+#define ECHO_PIN     13  // Arduino pin tied to echo pin on HC-SR04.
+#define MAX_DISTANCE 200 // Maximum distance we want to ping for (in centimeters). HC-SR04's maximum sensor distance is rated at 500cm.
+
+NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE); // NewPing setup of pins and maximum distance.
+
+byte pingSpeed = 50; // How frequently are we going to send out a ping (in milliseconds). 50ms would be 20 times a second.
+unsigned long pingTimer = pingSpeed; // Holds the next ping time.
+
+void setup() {
+  Serial.begin(115200); // Open serial monitor at 115200 baud to see ping results.
+}
+
+void loop() {
+  // Notice how there's no delays in this sketch to allow you to do other processing in-line while doing distance pings.
+  if (millis() >= pingTimer) { // pingSpeed milliseconds since last ping, do another ping.
+    pingTimer = millis() + pingSpeed; // Set the next ping time.
+    Serial.print("Ping: ");
+    int cm = sonar.ping_cm(); // Do the actual ping, get the results in centimeters.
+    if (!cm) Serial.println("-"); // Returns false if it doesn't get a ping within the set limit.
+    else {
+      Serial.print(cm); // Print the ping measurement.
+      Serial.println("cm");
+    }
+  }
+}
+}}}

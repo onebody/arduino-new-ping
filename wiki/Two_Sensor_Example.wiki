@@ -1,0 +1,37 @@
+#summary Two Ping Sensors Example Sketch
+#labels Featured
+
+= Two Ping Sensors Example Sketch =
+
+{{{
+#include <NewPing.h>
+
+NewPing sonar1(12, 13, 200); // Sensor 1: trigger pin, echo pin, maximum distance in cm
+NewPing sonar2(10, 11, 200); // Sensor 2: same stuff
+
+#define pingSpeed 250 // Ping frequency (in milliseconds), fastest we should ping is about 35ms per sensor.  In other words, 70ms for 2 sensors as in this sketch
+unsigned long pingTimer1, pingTimer2;
+int in1, in2;
+
+void setup() {
+  Serial.begin(9600); 
+  pingTimer1 = millis() + pingSpeed; // Sensor 1 fires after 250ms (pingSpeed)
+  pingTimer2 = pingTimer1 + 35; // Sensor 2 fires 35ms later
+}
+
+void loop() {
+  if (millis() >= pingTimer1) {
+    pingTimer1 += pingSpeed; // Make sensor 1 fire again 250ms later (pingSpeed)
+    in1 = sonar1.ping_in();
+  }
+  if (millis() >= pingTimer2) {
+    pingTimer2 = pingTimer1 + 35; // Make sensor 2 fire again 35ms after sensor 1 fires
+    in2 = sonar2.ping_in();
+    // Both sensors pinged, process results here
+    Serial.print(in1);
+    Serial.print(" - ");
+    Serial.println(in2);
+  }
+  // Do other stuff here, notice how there's no delays in this sketch, so you have processing cycles to do other things :)
+}
+}}}

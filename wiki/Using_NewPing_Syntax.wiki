@@ -3,7 +3,7 @@
 
 = Using NewPing (Syntax) =
 
-  * *`NewPing sonar(trigger_pin, echo_pin [, max_cm_distance]);`* - Initialize an ultrasonic device, trigger pin, echo pin, and [optional] maximum distance you wish to "see" (defaults to 500cm).
+  * *`NewPing sonar(trigger_pin, echo_pin [, max_cm_distance]);`* - Initialize an ultrasonic device, trigger pin, echo pin, and [optional] maximum distance you wish to sensor to measure (default = 500cm).
 
 
   * *`sonar.ping();`* - Send a ping and get the echo time (in microseconds) as a result. 

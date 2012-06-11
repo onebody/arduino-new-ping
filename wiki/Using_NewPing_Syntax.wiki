@@ -12,6 +12,7 @@
   * *`sonar.convert_in(echoTime);`* - Convert echoTime from microseconds to inches.
   * *`sonar.convert_cm(echoTime);`* - Convert echoTime from microseconds to centimeters.
 
+
   * *`sonar.ping_timer(function);`* - Send a ping and call function to test if ping is complete.
   * *`sonar.check_timer();`* - Check if ping has returned within the set distance limit.
 

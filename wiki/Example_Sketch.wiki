@@ -11,7 +11,7 @@
 // as we have in this example sketch, even faster pings can be achieved.  I suggest waiting at least 37
 // milliseconds between pings to avoid previous ping echo issues, that translates to a maximum ping rate
 // of around 27 times per second.  Much better than the sometimes 1 ping a second with other libraries.
-// ---------------------------------------------------------------------------
+// --------------------------------------------------------------------------
 #include <NewPing.h>
 
 #define TRIGGER_PIN  12  // Arduino pin tied to trigger pin on ping sensor.

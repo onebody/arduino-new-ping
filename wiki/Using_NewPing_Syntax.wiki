@@ -15,6 +15,6 @@
   * *`sonar.ping_timer(function);`* - Send a ping and call function to test if ping is complete.
   * *`sonar.check_timer();`* - Check if ping has returned within the set distance limit.
 
-  * *`timer_us(frequency, function);`* - Call function every frequency microseconds.
-  * *`timer_ms(frequency, function);`* - Call function every frequency milliseconds.
-  * *`timer_stop();`* - Stop the timer.
+  * *`NewPing::timer_us(frequency, function);`* - Call function every frequency microseconds.
+  * *`NewPing::timer_ms(frequency, function);`* - Call function every frequency milliseconds.
+  * *`NewPing::timer_stop();`* - Stop the timer.

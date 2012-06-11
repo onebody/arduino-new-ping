@@ -1,5 +1,4 @@
 #summary Timer Example Sketch
-#labels Featured
 
 = Timer Example Sketch =
 

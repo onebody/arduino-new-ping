@@ -14,7 +14,7 @@
 // pins 3 & 11 on Arduino Uno (pins 9 and 11 on Arduino Mega) and the Tone library. Note, only the PWM
 // functionality of the pins is lost (as they use Timer2 to do PWM), the pins are still available to use.
 // NOTE: For Teensy/Leonardo (ATmega32U4) the library uses Timer4 instead of Timer2.
-// --------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 #include <NewPing.h>
 
 #define TRIGGER_PIN  12  // Arduino pin tied to trigger pin on ping sensor.

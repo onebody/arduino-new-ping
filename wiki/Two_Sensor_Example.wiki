@@ -1,5 +1,4 @@
 #summary Two Ping Sensors Example Sketch
-#labels Featured
 
 = Two Ping Sensors Example Sketch =
 

@@ -7,10 +7,10 @@
 // ---------------------------------------------------------------------------
 // Getting a reliable ping every 50 milliseconds isn't possible with other ping or ultrasonic libraries.
 // These kinds of speeds work perfectly with the NewPing library. Even at the maximum sensor distance of
-// 500cm, distance measurements can be done 20 times a second!  If you set the maximum distance to 200cm
-// as we have in this example sketch, even faster pings can be achieved.  I suggest waiting at least 37
+// 500cm, distance measurements can be done 30 times a second!  If you set the maximum distance to 200cm
+// as we have in this example sketch, even faster pings can be achieved.  I suggest waiting at least 33
 // milliseconds between pings to avoid previous ping echo issues, that translates to a maximum ping rate
-// of around 27 times per second.  Much better than the sometimes 1 ping a second with other libraries.
+// of around 30 times per second.  Much better than the sometimes 1 ping a second with other libraries.
 // ---------------------------------------------------------------------------
 #include <NewPing.h>
 

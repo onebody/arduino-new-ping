@@ -23,11 +23,11 @@
 #define PING_INTERVAL 33 // Milliseconds between each sensor ping (29ms is about the minimum to avoid cross-sensor echos. Depending on your project, you can set this even lower and see if you get any cross-sensor echo).
 
 const int pingCycle = PING_INTERVAL * (SONAR_NUM + 1); // This is the time for one complete cycle of all sensors.
-unsigned long pingTimer[SONAR_NUM + 1]; // +1 for timer that displays results.
-unsigned int cm[SONAR_NUM]; // Where the ping distances are stored.
-uint8_t currentSensor = 0;  // Keeps track of which sensor is active.
+unsigned long pingTimer[SONAR_NUM + 1];                // +1 for timer that displays results.
+unsigned int cm[SONAR_NUM];                            // Where the ping distances are stored.
+uint8_t currentSensor = 0;                             // Keeps track of which sensor is active.
 
-NewPing sonar[SONAR_NUM] = { // Sensor object array.
+NewPing sonar[SONAR_NUM] = {     // Sensor object array.
   NewPing(41, 42, MAX_DISTANCE), // Each sensor's trigger pin, echo pin, and max distance to ping.
   NewPing(43, 44, MAX_DISTANCE),
   NewPing(45, 20, MAX_DISTANCE),
@@ -47,7 +47,7 @@ NewPing sonar[SONAR_NUM] = { // Sensor object array.
 
 void setup() {
   Serial.begin(115200);
-  pingTimer[0] = millis() + 75; // First ping starts at 75ms, gives time for the Arduino to chill before starting.
+  pingTimer[0] = millis() + 75;             // First ping starts at 75ms, gives time for the Arduino to chill before starting.
   for (uint8_t i = 0; i < SONAR_NUM; i++) { // Sets the starting times for each sensor.
     pingTimer[i+1] = pingTimer[i] + PING_INTERVAL;
   }
@@ -58,7 +58,7 @@ void loop() {
     if (millis() >= pingTimer[i]) {          // Is it this sensor's time to ping?
       pingTimer[i] += pingCycle;             // Set next time this sensor will be pinged.
       if (i == SONAR_NUM) oneSensorCycle();  // Sensor ping cycle complete, do something with the results.
-      else { // It's this sensor's time to ping.
+      else {                                 // It's this sensor's time to ping.
         sonar[currentSensor].timer_stop();          // Make sure previous timer is canceled before starting a new ping (insurance).
         currentSensor = i;                          // Sensor being accessed.
         cm[currentSensor] = 0;                      // Make distance zero in case there's no ping echo for this sensor.
@@ -71,7 +71,7 @@ void loop() {
 
 void echoCheck() {
   // Don't put anything here! This function needs to be lean.
-  if (sonar[currentSensor].check_timer()) {                        // Check to see if the ping was received.
+  if (sonar[currentSensor].check_timer()) { // Check to see if the ping was received.
     cm[currentSensor] = sonar[currentSensor].convert_cm(sonar[currentSensor].ping_result); // Set the sensor distance to the array.
   }
   // Don't put anything here! This function needs to be lean.

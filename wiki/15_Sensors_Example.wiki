@@ -20,7 +20,7 @@
 
 #define SONAR_NUM     15 // Number or sensors.
 #define MAX_DISTANCE 200 // Maximum distance (in cm) to ping.
-#define PING_INTERVAL 33 // Milliseconds between each sensor ping (29ms is about the minimum to avoid cross-sensor echos. Depending on your project, you can set this even lower and see if you get any cross-sensor echo).
+#define PING_INTERVAL 33 // Milliseconds between sensor pings (29ms is about the min to avoid cross-sensor echo).
 
 const int pingCycle = PING_INTERVAL * (SONAR_NUM + 1); // This is the time for one complete cycle of all sensors.
 unsigned long pingTimer[SONAR_NUM + 1];                // +1 for timer that displays results.

@@ -9,18 +9,18 @@
 // the number of sensors in your project by changing SONAR_NUM and the number of NewPing objects in the
 // "sonar" array. You also need to change the pins for each sensor for the NewPing objects. Each sensor
 // is pinged at 35ms intervals with one more step to process the results. So, one cycle of all sensors
-// takes 560ms (35*(15+1)=560ms), this is the "pingCycle" constant. The results are sent to the
+// takes 528ms (33*(15+1)=528ms), this is the "pingCycle" constant. The results are sent to the
 // "oneSensorCycle" function which currently just displays the distance data. Your project would normally
 // process the sensor results in this function (for example, decide if a robot needs to turn and call the
 // turn function). Keep in mind this example is event-driven. Your complete sketch needs to be written
-// so there's no "delay" commands and the loop() cycles at faster than a 35ms rate. If other processes take
-// longer than 35ms, you'll need to increase PING_INTERVAL so it doesn't get behind.
+// so there's no "delay" commands and the loop() cycles at faster than a 35ms rate. If other processes
+// take longer than 33ms, you'll need to increase PING_INTERVAL so it doesn't get behind.
 // ---------------------------------------------------------------------------
 #include <NewPing.h>
 
 #define SONAR_NUM     15 // Number or sensors.
 #define MAX_DISTANCE 200 // Maximum distance (in cm) to ping.
-#define PING_INTERVAL 35 // Milliseconds between each sensor ping (35ms is about the minimum to avoid cross-sensor echos. You could try making this as lower and see if you any cross-sensor echo).
+#define PING_INTERVAL 33 // Milliseconds between each sensor ping (29ms is about the minimum to avoid cross-sensor echos. Depending on your project, you can set this even lower and see if you get any cross-sensor echo).
 
 const int pingCycle = PING_INTERVAL * (SONAR_NUM + 1); // This used to be PING_SPEED, pings as fast as possible.
 unsigned long pingTimer[SONAR_NUM + 1]; // +1 for timer that displays results.

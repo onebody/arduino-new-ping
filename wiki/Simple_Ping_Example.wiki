@@ -5,8 +5,7 @@
 
 {{{
 // ---------------------------------------------------------------------------
-// Getting a reliable ping 30 times a second isn't possible with other ping or ultrasonic
-// libraries. These kinds of speeds work perfectly with the NewPing library.
+// Example NewPing library sketch that does a ping about 20 times per second.
 // ---------------------------------------------------------------------------
 #include <NewPing.h>
 
@@ -21,7 +20,7 @@ void setup() {
 }
 
 void loop() {
-  delay(33);                // Wait 33 milliseconds between pings (ping about 30 times/second).
+  delay(50);                // Wait 50 milliseconds between pings (ping about 20 times per second).
   int cm = sonar.ping_cm(); // Send out the ping, get the results in centimeters.
   Serial.print("Ping: ");
   Serial.print(cm);         // Print the result (0 = outside the set distance range, no ping echo)

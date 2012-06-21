@@ -1,7 +1,7 @@
-#summary Simple Ping Example Sketch
+#summary Simple NewPing Example Sketch
 #labels Featured
 
-= Simple Ping Example Sketch =
+= Simple NewPing Example Sketch =
 
 {{{
 // ---------------------------------------------------------------------------

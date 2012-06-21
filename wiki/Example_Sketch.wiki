@@ -1,7 +1,7 @@
 #summary Sample NewPing Sketch
 #labels Featured
 
-= Sample NewPing S ketch =
+= Sample NewPing Sketch =
 
 {{{
 // ---------------------------------------------------------------------------

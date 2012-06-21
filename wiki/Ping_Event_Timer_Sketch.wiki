@@ -1,7 +1,7 @@
 #summary Ping Event Timer Sketch
 #labels Featured
 
-= Ping Event Timer S ketch =
+= Ping Event Timer Sketch =
 
 {{{
 // ---------------------------------------------------------------------------

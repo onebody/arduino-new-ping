@@ -55,13 +55,13 @@ void setup() {
 
 void loop() {
   for (uint8_t i = 0; i <= SONAR_NUM; i++) { // Loop through all the sensors.
-    if (millis() >= pingTimer[i]) { // Is it this sensor's time to ping?
-      pingTimer[i] += pingCycle; // Set next time this sensor will be pinged.
-      if (i == SONAR_NUM) oneSensorCycle(); // Sensor ping cycle complete, do something with the results.
+    if (millis() >= pingTimer[i]) {          // Is it this sensor's time to ping?
+      pingTimer[i] += pingCycle;             // Set next time this sensor will be pinged.
+      if (i == SONAR_NUM) oneSensorCycle();  // Sensor ping cycle complete, do something with the results.
       else { // It's this sensor's time to ping.
-        sonar[currentSensor].timer_stop(); // Make sure previous timer is canceled before starting a new ping (insurance).
-        currentSensor = i; // Sensor being accessed.
-        cm[currentSensor] = 0; // Make distance zero in case there's no ping echo for this sensor.
+        sonar[currentSensor].timer_stop();          // Make sure previous timer is canceled before starting a new ping (insurance).
+        currentSensor = i;                          // Sensor being accessed.
+        cm[currentSensor] = 0;                      // Make distance zero in case there's no ping echo for this sensor.
         sonar[currentSensor].ping_timer(echoCheck); // Do the ping (processing continues, interrupt will call echoCheck to look for echo).
       }
     }
@@ -71,7 +71,7 @@ void loop() {
 
 void echoCheck() {
   // Don't put anything here! This function needs to be lean.
-  if (sonar[currentSensor].check_timer()) { // Check to see if the ping was received.
+  if (sonar[currentSensor].check_timer()) {                        // Check to see if the ping was received.
     cm[currentSensor] = sonar[currentSensor].convert_cm(sonar[currentSensor].ping_result); // Set the sensor distance to the array.
   }
   // Don't put anything here! This function needs to be lean.

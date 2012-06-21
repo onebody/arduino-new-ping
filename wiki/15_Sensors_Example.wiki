@@ -1,5 +1,4 @@
 #summary 15 Sensors Example Sketch
-#labels Featured
 
 = 15 Sensors Example Sketch =
 

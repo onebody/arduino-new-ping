@@ -1,5 +1,5 @@
+#summary Simple Ping Example Sketch
 #labels Featured
-#Simple Ping Example Sketch
 
 = Simple Ping Example Sketch =
 

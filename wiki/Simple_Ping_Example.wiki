@@ -4,7 +4,10 @@
 = Simple Ping Example Sketch =
 
 {{{
-// Basic NewPing library
+// ---------------------------------------------------------------------------
+// Getting a reliable ping 30 times a second isn't possible with other ping or ultrasonic
+// libraries. These kinds of speeds work perfectly with the NewPing library.
+// ---------------------------------------------------------------------------
 #include <NewPing.h>
 
 #define TRIGGER_PIN  12  // Arduino pin tied to trigger pin on the ultrasonic sensor.
@@ -18,7 +21,7 @@ void setup() {
 }
 
 void loop() {
-  delay(50);                // Wait 50 milliseconds.
+  delay(50);                // Wait 50 milliseconds (ping about 20 times/second, setting to 33 would ping about 30 times/second).
   int cm = sonar.ping_cm(); // Send out the ping, get the results in centimeters.
   Serial.print("Ping: ");
   Serial.print(cm);         // Print the result (0 = outside the set distance range, no ping echo)

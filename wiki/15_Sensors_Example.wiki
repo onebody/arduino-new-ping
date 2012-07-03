@@ -24,7 +24,7 @@
 const int pingCycle = PING_INTERVAL * SONAR_NUM; // This is the time for one complete cycle of all sensors.
 unsigned long pingTimer[SONAR_NUM];              // Holds the times when the next ping should happen for each sensor.
 unsigned int cm[SONAR_NUM];                      // Where the ping distances are stored.
-uint8_t currentSensor = 255;                     // Keeps track of which sensor is active (255 indicates starting position).
+uint8_t currentSensor = 0;                       // Keeps track of which sensor is active.
 
 NewPing sonar[SONAR_NUM] = {     // Sensor object array.
   NewPing(41, 42, MAX_DISTANCE), // Each sensor's trigger pin, echo pin, and max distance to ping.
@@ -56,8 +56,8 @@ void loop() {
   for (uint8_t i = 0; i < SONAR_NUM; i++) { // Loop through all the sensors.
     if (millis() >= pingTimer[i]) {         // Is it this sensor's time to ping?
       pingTimer[i] += pingCycle;                  // Set next time this sensor will be pinged.
-      if (currentSensor == 0) oneSensorCycle();   // Sensor ping cycle complete, do something with the results.
-      if (currentSensor < SONAR_NUM) sonar[currentSensor].timer_stop(); // Make sure previous timer is canceled before starting a new ping (insurance).
+      if (i == 0 && currentSensor == SONAR_NUM - 1) oneSensorCycle(); // Sensor ping cycle complete, do something with the results.
+      sonar[currentSensor].timer_stop();          // Make sure previous timer is canceled before starting a new ping (insurance).
       currentSensor = i;                          // Sensor being accessed.
       cm[currentSensor] = 0;                      // Make distance zero in case there's no ping echo for this sensor.
       sonar[currentSensor].ping_timer(echoCheck); // Do the ping (processing continues, interrupt will call echoCheck to look for echo).

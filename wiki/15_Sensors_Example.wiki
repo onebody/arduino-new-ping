@@ -64,7 +64,8 @@ void loop() {
 }
 
 void echoCheck() { // If ping received, set the sensor distance to array.
-  if (sonar[currentSensor].check_timer()) cm[currentSensor] = sonar[currentSensor].convert_cm(sonar[currentSensor].ping_result);
+  if (sonar[currentSensor].check_timer())
+    cm[currentSensor] = sonar[currentSensor].convert_cm(sonar[currentSensor].ping_result);
 }
 
 void oneSensorCycle() { // Sensor ping cycle complete, do something with the results.

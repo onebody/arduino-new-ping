@@ -26,8 +26,6 @@ NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE); // NewPing setup of pins and
 unsigned int pingSpeed = 50;  // How frequently are we going to send out a ping (in milliseconds). 50ms would be 20 times a second.
 unsigned long pingTimer = 75; // Holds the next ping time, start at 75ms to give time for the Arduino pins to stabilize.
 
-unsigned long test;
-
 void setup() {
   Serial.begin(115200); // Open serial monitor at 115200 baud to see ping results.
 }

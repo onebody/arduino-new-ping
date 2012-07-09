@@ -1,5 +1,5 @@
 #summary Simple NewPing Example Sketch
-#labels Featured,Phase-Requirements
+#labels Featured
 
 = Simple NewPing Example Sketch =
 

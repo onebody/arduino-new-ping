@@ -21,10 +21,10 @@ void setup() {
 }
 
 void loop() {
-  delay(50);                // Wait 50 milliseconds between pings (ping about 20 times per second).
   int cm = sonar.ping_cm(); // Send out the ping, get the results in centimeters.
   Serial.print("Ping: ");
   Serial.print(cm);         // Print the result (0 = outside the set distance range, no ping echo)
   Serial.println("cm");
+  delay(50);                // Wait 50 milliseconds between pings (ping about 20 times per second).
 }
 }}}

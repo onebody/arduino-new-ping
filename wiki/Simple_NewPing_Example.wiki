@@ -25,6 +25,6 @@ void loop() {
   Serial.print("Ping: ");
   Serial.print(cm);         // Print the result (0 = outside the set distance range, no ping echo)
   Serial.println("cm");
-  delay(50);                // Wait 50 milliseconds between pings (ping about 20 times per second). Suggest 29ms as the shortest delay between pings.
+  delay(50);                // Wait 50 milliseconds between pings (ping about 20 times per second). 29ms should be the shortest delay between pings.
 }
 }}}

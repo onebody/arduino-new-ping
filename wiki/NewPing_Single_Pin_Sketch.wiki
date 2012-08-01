@@ -23,10 +23,10 @@ void setup() {
 }
 
 void loop() {
-  delay(50);                // Wait 50ms between pings (about 20 pings/sec). 29ms should be the shortest delay between pings.
-  int cm = sonar.ping_cm(); // Send out the ping, get the results in centimeters.
+  delay(50);                      // Wait 50ms between pings (about 20 pings/sec). 29ms should be the shortest delay between pings.
+  unsigned int uS = sonar.ping(); // Send ping, get ping time in microseconds (uS).
   Serial.print("Ping: ");
-  Serial.print(cm);         // Print the result (0 = outside the set distance range, no ping echo)
+  Serial.print(sonar.convert_cm(uS)); // Convert ping time to distance and print result (0 = outside set distance range, no ping echo)
   Serial.println("cm");
 }
 }}}

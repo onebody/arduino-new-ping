@@ -9,6 +9,7 @@
   * *`sonar.ping();`* - Send a ping and get the echo time (in microseconds) as a result. 
   * *`sonar.ping_in();`* - Send a ping and get the distance in whole inches.
   * *`sonar.ping_cm();`* - Send a ping and get the distance in whole centimeters.
+  * *`sonar.ping_median(iterations);`* - Do multiple pings (default=5), discard out of range and return median in microseconds. 
   * *`sonar.convert_in(echoTime);`* - Convert echoTime from microseconds to inches.
   * *`sonar.convert_cm(echoTime);`* - Convert echoTime from microseconds to centimeters.
 

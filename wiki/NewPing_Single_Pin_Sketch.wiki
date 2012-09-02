@@ -30,3 +30,5 @@ void loop() {
   Serial.println("cm");
 }
 }}}
+
+http://www.leethost.com/link_pics/1wire_bb.png

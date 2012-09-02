@@ -3,8 +3,6 @@
 
 = Simple NewPing Example Sketch =
 
-http://www.leethost.com/link_pics/lcdbitmap_4bit.jpg
-
 {{{
 // ---------------------------------------------------------------------------
 // Example NewPing library sketch that does a ping about 20 times per second.
@@ -30,3 +28,5 @@ void loop() {
   Serial.println("cm");
 }
 }}}
+
+http://www.leethost.com/link_pics/2wire_bb.png

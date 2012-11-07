@@ -1,7 +1,7 @@
 #summary NewPing Single Pin Sketch
 #labels Featured
 
-= NewPing Single Pin Sketch =
+= NewPing Single Pin Sketch- =
 
 {{{
 // ---------------------------------------------------------------------------

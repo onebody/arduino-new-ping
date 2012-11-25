@@ -15,7 +15,7 @@
 // functionality of the pins is lost (as they use Timer2 to do PWM), the pins are still available to use.
 // NOTE: For Teensy/Leonardo (ATmega32U4) the library uses Timer4 instead of Timer2.
 // ---------------------------------------------------------------------------
-#include <NewPing.h>
+#include <NewPing .h>
 
 #define TRIGGER_PIN  12  // Arduino pin tied to trigger pin on ping sensor.
 #define ECHO_PIN     11  // Arduino pin tied to echo pin on ping sensor.

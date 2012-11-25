@@ -1,4 +1,4 @@
-#summary Using NewPing (S yntax)
+#summary Using NewPing (Syntax)
 #labels Featured
 
 = Using NewPing (Syntax) =

@@ -1,4 +1,4 @@
-#summary Simple NewPing Example Sketch
+#summary Simple NewPing Example S ketch
 #labels Featured
 
 = Simple NewPing Example Sketch =

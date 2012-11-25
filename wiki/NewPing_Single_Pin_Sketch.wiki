@@ -1,4 +1,4 @@
-#summary NewPing Single Pin Sketch
+#summary NewPing Single Pin S ketch
 #labels Featured
 
 = NewPing Single Pin Sketch =

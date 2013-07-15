@@ -1,4 +1,4 @@
-#summary Help with multiple definition of `__vector_7' error when vompiling
+#summary Help with multiple definition of `__vector_7' error when compiling
 #labels Phase-Implementation
 
 = HELP - Multiple Definition of `__vector_7' Error When Compiling =

@@ -1,5 +1,5 @@
+#summary Help with using the 15 sensors example sketch
 #labels Phase-Implementation
-#Help with using the 15 sensors example sketch
 
 = HELP - 15 Sensors Example Sketch =
 

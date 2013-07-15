@@ -33,9 +33,9 @@ ISR(TIMER2_COMPA_vect) {
 
 That's it!  Also, if the conflict is with the tone library, you can use a different tone library that doesn't use timer 2.  I've created a couple tone replacement libraries that not only use timer 1 instead of timer 2 to avoid a conflict, they also have many other advantages:
 
-NewTone - About 1,200 bytes smaller code size than the standard tone library. Faster execution time. Exclusive use of port registers for fastest and smallest code. Higher quality sound output than tone library. Plug-in replacement for Tone. Uses timer 1 which may free up conflicts with the tone library.
+*[https://code.google.com/p/arduino-new-tone/ NewTone]* - About 1,200 bytes smaller code size than the standard tone library. Faster execution time. Exclusive use of port registers for fastest and smallest code. Higher quality sound output than tone library. Plug-in replacement for Tone. Uses timer 1 which may free up conflicts with the tone library.
 
-toneAC - Nearly twice the volume (because it uses two out of phase pins in push/pull fashion). Higher quality (less clicking). Capability of producing higher frequencies (even if running at a lower clock speed). Nearly 1.5k smaller compiled code. Bug fixes (standard tone library can generate some odd and unpredictable results). Can set not only the frequency but also the sound volume. Less stress on the speaker so it will last longer and sound better.
+*[https://code.google.com/p/arduino-tone-ac/ toneAC]* - Nearly twice the volume (because it uses two out of phase pins in push/pull fashion). Higher quality (less clicking). Capability of producing higher frequencies (even if running at a lower clock speed). Nearly 1.5k smaller compiled code. Bug fixes (standard tone library can generate some odd and unpredictable results). Can set not only the frequency but also the sound volume. Less stress on the speaker so it will last longer and sound better.
 
 In addition, version 1.6 of the NewPing library (currently under development) will include a setting that allows you to easily turn off the timer 2 stuff if you're not using the ping_timer() method.
 

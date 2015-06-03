@@ -1,0 +1,1 @@
+## [Download NewPing v1.6 \*BETA\*](https://docs.google.com/uc?export=download&id=0B_FPiLH_xoIXRXlwNHppazlmalU) ##
